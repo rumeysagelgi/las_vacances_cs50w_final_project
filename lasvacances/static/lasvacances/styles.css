@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Passions+Conflict&display=swap');
+
+
+.navbar-header {
+    font-family: 'Passions Conflict', cursive;
+    font-size: 20px;
+}
+
+.header {
+    font-family: 'Passions Conflict', cursive;
+    font-size: 10vw;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    background-color: rgb(33, 37, 41);
+    color: rgb(231, 231, 231);
+    display: inline-block;
+    font-weight: 450;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid black;
+    padding: 3px 9px;
+    border-radius: .25rem;
+    margin-left: 4.3px;
+}
+
+.button:hover {
+    background-color: rgb(33, 37, 41);
+    color: rgb(38, 188, 233);
+}
+
+.alert {
+    margin: 5px;
+    padding: 5px;
+    color: white;
+    max-width: fit-content;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+.link {
+    text-decoration: none;
+    color: rgb(38, 188, 233);
+}
+
+.link:hover {
+    text-decoration: underline;
+    color: rgb(38, 188, 233);
+}
+
+#previous-page {
+    margin: 5px;
+    padding: 5px;
+}
+
+.positive {
+    background-color: #0f7536;
+}
+
+.negative {
+    background-color: #831919;
+}
+
+.pad {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+/* Index Page CSS */
+#search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-form {
+    width: 50%;
+    max-width: 400px;
+    margin-bottom: 10px;
+}
+
+#search-input {
+    min-width: 100%;
+    padding: 3px;
+}
+
+#display {
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    color: #212529;
+}
+
+.display-item {
+    width: 185px;
+    height: 160px;
+    padding: 5px;
+    margin: 5px;
+    background-color:rgb(231, 231, 231);
+    border: solid black 1px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.display-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-top: 4px;
+    height: 48px;
+}
+
+.display-item:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    background-color: rgb(38, 188, 233);
+    border: solid black 1px;
+    white-space: nowrap;
+    overflow: visible;
+    font-weight: 500;
+    position: sticky;
+}
+
+.display-item:hover > .display-info > .display-title {
+    color: rgb(231, 231, 231);
+    padding-right: 3px;
+    padding-left: 3px;
+    min-width: fit-content;
+    align-self: center;
+}
+
+.display-address {
+    font-size: 13px;
+}
+
+.display-item:hover > .display-info > .display-address {
+    align-self: center;
+}
+
+.display-image {
+    width: 175px;
+    height: 98px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-image img {
+    min-width: 100%;
+}
+
+
+/* Suite Page CSS */
+.suite-container {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.suite-image {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.suite-image > span {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.suite-cover {
+    border: solid black 1px;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.suite-cover > img {
+    min-width: 100%;
+}
+
+.suite-rating {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .suite-container {
+        flex-direction: column;
+    }
+}
+
+.suite-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.mi-lower {
+    margin-bottom: 15px;
+}
+
+.mi-lower select {
+    max-width: 150px;
+    margin-left: 5px;
+}
+
+.mi-lower form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.suite-form-c {
+    display: flex;
+    justify-content: center;
+}
+
+.suite-form-c #title {
+    width: 443px;
+}
+
+.suite-form-c #rating {
+    width: 117px;
+}
+
+.suite-form-c #review {
+}
+
+.suite-form {
+    padding: 5px;
+}
+
+.suite-form > input {
+    margin-bottom: 10px;
+}
+
+.marg {
+    margin-left: 4.3px;
+}
+
+.suite-review-c {
+    max-width: 700px;
+}
+
+
+/* Profile Page CSS */
+.profile-upper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.profile-info {
+    padding-left:15px;
+}
+
+.profile-img {
+    border: solid black 1px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.profile-img > img {
+    min-width: 100%;
+}
+
+.profile-lower {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.profile-lists, .profile-reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content:left;
+    width: 350px;
+    min-width: 200px;
+    height: 350px;
+}
+
+.pl-item, .pr-item {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content:left;
+    height: 85px;
+    width: 300px;
+    min-width: 190px;
+    border-top: rgb(200, 201, 202) solid 0.5px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+/* Review Page CSS */
+.-marg {
+    margin-left: -4px;
+}
+
+.bottom-marg {
+    margin-bottom: 5px;
+}
