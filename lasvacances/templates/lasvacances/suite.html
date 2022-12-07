@@ -1,0 +1,102 @@
+{% extends "lasvacances/layout.html" %}
+
+{% load static %}
+
+{% block script %}
+    <script src="{% static 'lasvacances/image.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+
+    <div class="suite-container container">
+        <div class="suite-image">
+            <div class="suite-cover">
+                <img src="{{suite.image}}">
+            </div>
+            <span>
+                {% if rating %}
+                    Rating: {{rating.rating}}
+                {% else %}
+                    Not rated yet.
+                {% endif %}
+            </span>
+        </div>
+        <div class="suite-info">
+            <div class="mi-upper">
+                <h4><span><strong>{{suite.title}}</strong></span></h4>
+                <h5><span>{{suite.address}}</span></h5>
+                <br>
+                <span>{{suite.details}}</span>
+                <br>
+                <br>
+                <span><strong>{{suite.price}}</strong></span>
+                <br>
+                <br>
+            </div>
+            {% if user.is_authenticated %}
+                <div class="mi-lower">
+                    <form action="{% url 'add_to_list' %}" method="POST">
+                        {% if lists %}
+                        <label for="list">Add this suite to list: </label>
+                        <select name="list">
+                            {% for list in lists %}
+                                <option value="{{list.id}}">{{list.name}}</option>
+                            {% endfor %}
+                        </select>
+                        <input type="hidden" name="suite" value="{{suite.id}}">
+                        <input class="button btn" type="submit" value="Add">
+                        {% else %}
+                            No lists yet.&nbsp;<a href="{% url 'add_list' %}">Create a list</span></a>
+                        {% endif %}
+                    </form>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <div class="suite-form-c container">
+        <form class="suite-form" action="{% url 'add_review' suite.id %}" method="POST">
+            <hr>
+            <br>
+
+            <label for="title"></label>
+            <input type="text" id="title" name="title" autocomplete="off" placeholder="Your Review Title"><br>
+
+            <label for="rating"></label>
+            <input type="number" id="rating" name="rating" min="0" max="10" autocomplete="off" placeholder="Rating (0-10)"><br>
+
+            <label for="review"></label>
+            <textarea name="review" id="review" placeholder="Your Review" rows="6" cols="60"></textarea><br>
+
+            <input  class="button" type="submit" value="Submit">
+        </form>
+    </div>
+
+    <hr>
+
+    <div class="suite-review-c container">
+        <h4>Reviews:</h4>
+        <br>
+        {% if reviews %}
+            {% for review in reviews %}
+                From: <a class="link" href="{% url 'profile' review.author %}"><strong>{{review.author}}</strong></a>
+                <br>
+                <a class="link" href="{% url 'review' review.id %}">{{review.title}}</a>
+                <br>
+                Rating: {{review.rating}}
+                <br><br>
+                {{review.review}}
+                <br>
+                <hr>
+            {% endfor %}
+            <a class="link" href="{% url 'suite_reviews' suite.id %}">View all reviews for this suite</a>
+            <br><br>
+        {% else %}
+            No reviews yet.
+            <br><br>
+        {% endif %}
+    </div>
+
+{% endblock %}

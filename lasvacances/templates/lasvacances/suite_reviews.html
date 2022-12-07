@@ -1,0 +1,30 @@
+{% extends "lasvacances/layout.html" %}
+
+{% load static %}
+
+{% block script %}
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h4><span class="">All reviews for <a class="link" href="{% url 'suite' suite.id %}"><strong>{{suite.title}} ({{suite.address}})</strong></a></span></h4>
+        <br>
+        <br>
+        {% for review in reviews %}
+            From: <a class="link" href="{% url 'profile' review.author %}"><strong>{{review.author}}</strong></a>
+            <br>
+            <a class="link" href="{% url 'review' review.id %}">{{review.title}}</a>
+            <br>
+            Rating: <strong>{{review.rating}}</strong>
+            <br>
+            <br>
+            {{review.review}}
+            <br>
+            <hr>
+        {% empty %}
+            No reviews yet.
+        {% endfor %}
+    </div>
+
+{% endblock %}

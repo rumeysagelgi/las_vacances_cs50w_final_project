@@ -1,0 +1,26 @@
+{% extends "lasvacances/layout.html" %}
+
+{% load static %}
+
+{% block script %}
+    <script src="{% static 'lasvacances/index.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+
+    <a style="color: rgb(38, 188, 233);" class="header" href="{% url 'index' %}">Las Vacances Suites</a>
+
+    <div class="index-container container">
+        <div id="search-container">
+            <form id="search-form">
+                <input autofocus name="suite" id="search-input" type="text" autocomplete="off" placeholder="Search a Suite by Street, City or Country">
+            </form>
+        </div>
+
+        <div id="suites-container container">
+            <div id="display">
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

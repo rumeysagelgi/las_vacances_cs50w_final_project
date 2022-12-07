@@ -1,0 +1,44 @@
+{% extends "lasvacances/layout.html" %}
+
+{% load static %}
+
+{% block script %}
+{% endblock %}
+
+{% block body %}
+
+    {% if user.is_authenticated %}
+        <br>
+        <div class="container">
+            <h4 class="marg">Add New Suite:</h4>
+            <br>
+            <form action="{% url 'add_suite' %}"  enctype="multipart/form-data" method="POST">
+
+                <label for="image"></label>
+                <input type="url" name="image" placeholder="Cover Image URL of Your Suite">
+                <br><br>
+
+                <label for="title"></label>
+                <input type="text" name="title" autocomplete="off" placeholder="Title">
+                <br><br>
+
+                <label for="address"></label>
+                <input type="text" name="address" autocomplete="off" placeholder="Address">
+                <br><br>
+
+                <label for="price"></label>
+                <input type="text" name="price" autocomplete="off" placeholder="Price">
+                <br><br>
+
+                <label for="details"></label>
+                <textarea name="details" rows="6" cols="60" placeholder="Details About Your Suite"></textarea>
+                <br><br>
+
+                <input class="button" type="submit" value="Submit">
+
+            </form>
+        </div>
+
+    {% endif %}
+
+{% endblock %}
