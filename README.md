@@ -38,7 +38,7 @@ Las Vacances Suites is made from scratch following the requirements provided as 
 
 
 ## How to Run:
-Go inside `/final_project` folder on your terminal and execute the following in order:
+Go inside the project folder on your terminal and execute the following in order:
 
  - `python manage.py makemigrations` to generate the necessary files for the setup.
  - `python manage.py migrate` to execute the setup files that have created.
